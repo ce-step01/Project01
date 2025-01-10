@@ -57,4 +57,55 @@ public class ParkDAO {
 		return false;
 	}
 
+	public static ParkDTO getparkInfo(String num) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ParkDTO park = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement("select * from parkInfo num=?");// PreparedStatement 객체를 생성하여 SQL 쿼리를 준비하는 역할
+			pstmt.setInt(1, num);
+			rset = pstmt.executeQuery();
+			if (rset.next()) {
+				parkInfo = ParkDTO.builder().parkName(rset.getString(1)).openingDate(rset.getString(2))
+						.principalSpecies(rset.getString(3)).directions(rset.getString(4)).location(rset.getString(5))
+						.officeNumber(rset.getString(6)).keyFacilities(rset.getString(7)).build();
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return parkInfo;
+
+	}
+
+	public static ArrayList<ParkDTO> getAllparkInfo() throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<ParkDTO> list = null;
+		try {
+			con = DBUtil.getConnection()
+			pstmt = con.prepareStatement("select * from parkInfor");
+			rset = pstmt.executeQuery();
+			
+			list = new ArrayList<ParkDTO>();
+			list.add(ParkDTO.builder()
+					.parkName(rset.getString(1))
+					.openingDate(rset.getString(2))
+					.principalSpecies(rset.getString(3))
+					.directions(rset.getString(4))
+					.location(rset.getString(5))
+					.officeNumber(rset.getString(6))
+					.keyFacilities(rset.getString(7)).build();
+					)}
+			
+			
+		}finally
+
+	{
+		DBUtil.close(con, pstmt, rset);
+	}return parkInfo;
+}
+
 }
