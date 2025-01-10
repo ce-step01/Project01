@@ -2,7 +2,9 @@ package park.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import park.model.dto.ParkDTO;
 import park.model.util.DBUtil;
@@ -57,7 +59,7 @@ public class ParkDAO {
 		return false;
 	}
 
-	public static ParkDTO getparkInfo(String num) throws SQLException {
+	public static ParkDTO getparkInfo(int num) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
