@@ -1,0 +1,34 @@
+# Eclipse & STS 관련 파일
+.project
+.classpath
+.settings/
+# IntelliJ 관련 파일
+.idea/
+# MacOS 시스템 파일
+.DS_Store
+# Windows 시스템 파일
+Thumbs.db
+# 빌드 출력 폴더
+/target/
+/bin/
+# Java 빌드 아티팩트
+*.class
+*.jar
+*.war
+*.ear
+# 로그 파일
+*.log
+# 의존성 파일
+*.iml
+# Gradle 파일
+.gradle/
+# Maven 관련 파일
+/.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+# .env 파일 (개인 환경 설정 파일)
+.env
+# 기타 IDE나 텍스트 에디터 설정 파일
+.vscode/
+*.swp
