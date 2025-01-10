@@ -33,20 +33,21 @@ public class ParkDAO {
 	}
 
 	// 공원 정보 추가(insert)
-	public static boolean addParkInfo(ParkDTO park) throws SQLException {
+	public static boolean addParkInfo(int num, String parkName, String openingDate, String principalSpecies,
+			String directions, String location, String officeNumber, String keyFacilities) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement("insert into seoul_main_park values(?, ?, ?, ?, ?, ?, ?, ?)");
-			pstmt.setInt(1, park.getNum());
-			pstmt.setString(2, park.getParkName());
-			pstmt.setString(3, park.getOpeningDate());
-			pstmt.setString(4, park.getPrincipalSpecies());
-			pstmt.setString(5, park.getDirections());
-			pstmt.setString(6, park.getLocation());
-			pstmt.setString(7, park.getOfficeNumber());
-			pstmt.setString(8, park.getKeyFacilities());
+			pstmt.setInt(1, num);
+			pstmt.setString(2, parkName);
+			pstmt.setString(3, openingDate);
+			pstmt.setString(4, principalSpecies);
+			pstmt.setString(5, directions);
+			pstmt.setString(6, location);
+			pstmt.setString(7, officeNumber);
+			pstmt.setString(8, keyFacilities);
 
 			int result = pstmt.executeUpdate();
 
