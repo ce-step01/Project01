@@ -2,7 +2,9 @@ package park.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import park.model.dto.ParkDTO;
 import park.model.util.DBUtil;
@@ -57,7 +59,7 @@ public class ParkDAO {
 		return false;
 	}
 
-	public static ParkDTO getparkInfo(String num) throws SQLException {
+	public static ParkDTO getparkInfo(int num) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -68,14 +70,14 @@ public class ParkDAO {
 			pstmt.setInt(1, num);
 			rset = pstmt.executeQuery();
 			if (rset.next()) {
-				parkInfo = ParkDTO.builder().parkName(rset.getString(1)).openingDate(rset.getString(2))
+				park = ParkDTO.builder().parkName(rset.getString(1)).openingDate(rset.getString(2))
 						.principalSpecies(rset.getString(3)).directions(rset.getString(4)).location(rset.getString(5))
 						.officeNumber(rset.getString(6)).keyFacilities(rset.getString(7)).build();
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
 		}
-		return parkInfo;
+		return park;
 
 	}
 
@@ -85,27 +87,37 @@ public class ParkDAO {
 		ResultSet rset = null;
 		ArrayList<ParkDTO> list = null;
 		try {
-			con = DBUtil.getConnection()
-			pstmt = con.prepareStatement("select * from parkInfor");
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement("select * from seoul_main_park");
 			rset = pstmt.executeQuery();
-			
-			list = new ArrayList<ParkDTO>();
-			list.add(ParkDTO.builder()
-					.parkName(rset.getString(1))
-					.openingDate(rset.getString(2))
-					.principalSpecies(rset.getString(3))
-					.directions(rset.getString(4))
-					.location(rset.getString(5))
-					.officeNumber(rset.getString(6))
-					.keyFacilities(rset.getString(7)).build();
-					)}
-			
-			
-		}finally
 
-	{
-		DBUtil.close(con, pstmt, rset);
-	}return parkInfo;
-}
+			list = new ArrayList<ParkDTO>();
+			list.add(ParkDTO.builder().parkName(rset.getString(1)).openingDate(rset.getString(2))
+					.principalSpecies(rset.getString(3)).directions(rset.getString(4)).location(rset.getString(5))
+					.officeNumber(rset.getString(6)).keyFacilities(rset.getString(7)).build());
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+	}
+
+	// 공원 정보 삭제
+	public static boolean deleteParkInfo(int num) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement("delete from seoul_main_park where num=?");
+			pstmt.setInt(1, num);
+			int result = pstmt.executeUpdate();
+			if (result == 1) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return false;
+	}
 
 }
