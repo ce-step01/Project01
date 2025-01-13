@@ -250,26 +250,26 @@ jdbc.driver=com.mysql.cj.jdbc.Driver
 
 #### Solution : 충돌 파일들을 수동으로 수정하여 강제로 병합함
 
-
 ```
 git add src/controller/Controller.java
 git add src/park/view/StartView.java
 ```
 
- <br/><br/>
- 문제5)
+<br/>
 
-MySQL과의 연결 문제로 Communication link failure 오류가 발생함
+ ---
+
+<br/>
+### Issue 5. MySQL과의 연결 문제로 Communication link failure 오류 발생
 
 ![cap3](https://github.com/user-attachments/assets/aacb6750-13a2-412b-8d85-b1a71699271f)
 
-해결5)
+#### Solution : Oracle VirtualBox 서버 실행 및 MobaXterm 로그인을 통해 mysql에 접속함
 
-Oracle VirtualBox의 서버 실행 및 MobaXterm 로그인해 mysql에 접속함
 
 ![cap4](https://github.com/user-attachments/assets/029b1b3e-051d-4423-bb6c-9d49ff3356fa)
 
-
+<br/>
 ## ✒Retrospective
 
 
