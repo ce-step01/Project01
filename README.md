@@ -65,7 +65,7 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
 ```
 
  #### Solution : dbinfo.properties 파일 내 Oracle 드라이버 삭제 후 MySQL 드라이버로 수정
- 
+<br/>
 ![cap1](https://github.com/user-attachments/assets/14f82218-412e-4c20-9e12-f1be0779d8f2)
 <br/>
 
