@@ -35,7 +35,7 @@
 
 ## 🔫 Troubleshooting
 ---
-문제1. 
+문제1) 
 
 csv 파일 형식의 데이터베이스를 DBeaver의 테이블로 전환 시 
 
@@ -43,12 +43,17 @@ csv 파일 형식의 데이터베이스를 DBeaver의 테이블로 전환 시
 오류코드 : Can't init data transfer, Can't create or update target table
 ```
 
-해결1.
+해결1)
 
 csv 파일 전처리 시 스키마에 띄어쓰기(space) 공간이 남아있었다. 이것을 지워주니 테이블 변환에 성공했다.
 
 
-문제2.
+문제2)
+
+데이터베이스 연결 중 발생한 IO 문제
+
+Oracle JDBC 드라이버를 사용하려고 시도하면서 Connection reset 예외가 발생
+
 
 ```
 java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 ms., Authentication lapse 0 ms.
