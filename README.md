@@ -8,7 +8,7 @@
 
 
 ## 📢 프로젝트 소개
-JDBC와 mySQL을 활용하여 서울의 모든 구조를 
+
 
 
 ## 🗂 프로젝트 구조
@@ -34,14 +34,12 @@ JDBC와 mySQL을 활용하여 서울의 모든 구조를
 
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
 
-
-## ⌨ 개발 환경
-
-
 ## ⚙ 아키텍처
 
 
-## 🔫 Troubleshooting
+## 🔍 주요 기능
+
+## 🔫 트러블슈팅
 
 
 ## ✒ 회고
