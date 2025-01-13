@@ -67,6 +67,7 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
  #### Solution : dbinfo.properties 파일 내 Oracle 드라이버 삭제 후 MySQL 드라이버로 수정
 <br/>
 ![cap1](https://github.com/user-attachments/assets/14f82218-412e-4c20-9e12-f1be0779d8f2)
+
 <br/>
 
 ---
@@ -104,9 +105,13 @@ STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 �
     }
 ```
 
-해결3)
+```
+System.out.println("DB 설정 파일 로드 중 오류 발생: " + e.getMessage());
+```
 
-Class.forName(p.getProperty("jdbc.driverClassName")); 대신 Class.forName(p.getProperty("jdbc.driver"));로 수정함
+
+#### Solution : JDBC 드라이버가 정상적으로 로드되지 않으므로, Class.forName(p.getProperty("jdbc.driverClassName")); 대신 Class.forName(p.getProperty("jdbc.driver"));로 수정함
+
 
 ```
 # dbinfo.properties
