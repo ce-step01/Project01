@@ -42,6 +42,7 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 ## 🔍 주요 기능
 
 ## 🔫 트러블슈팅
+<br/>
 
 ### Issue 1. CSV 형식 데이터의 DBeaver 테이블 변환 실패
 
@@ -119,42 +120,6 @@ jdbc.password=user01
 jdbc.driver=com.mysql.cj.jdbc.Driver
 ```
 
-
-
-## 🔫 Troubleshooting
----
-문제1) 
-
-CSV 형식의 데이터를 DBeaver에서 테이블로 변환하지 못함
-
-```
-error code: Can't init data transfer, Can't create or update target table
-```
-
-해결1)
-
-CSV 파일 전처리 시, 스키마에 불필요한 공백이 남아 있었음. 이를 제거하니 테이블 변환이 성공적으로 이뤄짐
-
-<br/><br/>
-
-문제2)
-
-데이터베이스 연결 중 Connection reset 예외가 발생함
-
-```
-java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 ms., Authentication lapse 0 ms.
-    at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:794)
-    at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:688)
-    at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:39)
-``` 
-
-해결2)
-
-![cap1](https://github.com/user-attachments/assets/14f82218-412e-4c20-9e12-f1be0779d8f2)
-
-dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정했기에, 이를 수정함 
-
- <br/><br/>
 
 문제3)
 
