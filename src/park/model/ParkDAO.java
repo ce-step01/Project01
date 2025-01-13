@@ -60,26 +60,31 @@ public class ParkDAO {
 		return false;
 	}
 
-	public static ParkDTO getparkInfo(int num) throws SQLException {
+	public static ArrayList<ParkDTO> getparkInfo(String keyword) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ParkDTO park = null;
+		ArrayList<ParkDTO> list = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("select * from seoul_main_park where num=?");// PreparedStatement 객체를 생성하여 SQL 쿼리를 준비하는 역할
-			pstmt.setInt(1, num);
+			pstmt = con.prepareStatement("select * from seoul_main_park where park_name like ?");// PreparedStatement 객체를 생성하여 SQL 쿼리를 준비하는 역할
+			pstmt.setString(1, "%" + keyword + "%");
 			rset = pstmt.executeQuery();
-			if (rset.next()) {
+			
+			list = new ArrayList<ParkDTO>();
+			
+			while (rset.next()) {
 				park = ParkDTO.builder().num(rset.getInt(1)).parkName(rset.getString(2)).openingDate(rset.getString(3))
 						.principalSpecies(rset.getString(4)).directions(rset.getString(5)).location(rset.getString(6))
 						.officeNumber(rset.getString(7)).keyFacilities(rset.getString(8)).build();
+				list.add(park);
 			}
+
 		} finally {
 			DBUtil.close(con, pstmt, rset);
 		}
-		return park;
-
+		return list;
 	}
 
 	public static ArrayList<ParkDTO> getAllparkInfo() throws SQLException {
@@ -102,6 +107,7 @@ public class ParkDAO {
 				list.add(park);
 				System.out.println(park);
 			}
+			
 		} finally {
 			DBUtil.close(con, pstmt, rset);
 		}
@@ -109,14 +115,14 @@ public class ParkDAO {
 	}
 
 	// 공원 정보 삭제
-	public static boolean deleteParkInfo(int num) throws SQLException {
+	public static boolean deleteParkInfo(String parkName) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("delete from seoul_main_park where num=?");
-			pstmt.setInt(1, num);
+			pstmt = con.prepareStatement("delete from seoul_main_park where park_name=?");
+			pstmt.setString(1, parkName);
 			int result = pstmt.executeUpdate();
 			if (result == 1) {
 				return true;
