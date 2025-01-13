@@ -106,6 +106,7 @@ STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 �
 ```
 
 ```
+# 발생한 오류
 System.out.println("DB 설정 파일 로드 중 오류 발생: " + e.getMessage());
 ```
 
@@ -124,66 +125,15 @@ jdbc.password=user01
 # 추가된 부분 
 jdbc.driver=com.mysql.cj.jdbc.Driver
 ```
-
-
-문제3)
-
-STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 콘솔 출력문을 삽입함
-
-```
-# DBUtil.java
-
-    static {
-        try {
-            // dbinfo.properties 파일 로드
-            p.load(new FileInputStream("dbinfo.properties"));
-            System.out.println("dbinfo.properties 파일 로드 완료");
-
-            // 파일 내용을 출력하여 확인
-            System.out.println("jdbc.driver: " + p.getProperty("jdbc.driver"));
-            System.out.println("jdbc.url: " + p.getProperty("jdbc.url"));
-            System.out.println("jdbc.username: " + p.getProperty("jdbc.username"));
-            System.out.println("jdbc.password: " + p.getProperty("jdbc.password"));
-
-            // JDBC 드라이버 로드
-            Class.forName(p.getProperty("jdbc.driverClassName"));
-            System.out.println("JDBC 드라이버가 정상적으로 로드되었습니다.");
-        } catch (ClassNotFoundException e) {
-            System.out.println("JDBC 드라이버 로드 실패: " + e.getMessage());
-            e.printStackTrace();
-        } catch (Exception e) {
-            System.out.println("DB 설정 파일 로드 중 오류 발생: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-```
-
-해결3)
-
-Class.forName(p.getProperty("jdbc.driverClassName")); 대신 Class.forName(p.getProperty("jdbc.driver"));로 수정함
-
-```
-# dbinfo.properties
-
-jdbc.driverClassName=com.mysql.cj.jdbc.Driver
-jdbc.url=jdbc:mysql://127.0.0.1:3306/fisa
-jdbc.username=user01
-jdbc.password=user01
-
-# 추가된 부분 
-jdbc.driver=com.mysql.cj.jdbc.Driver
-```
-
- <br/><br/>
-문제4)
-
-로컬 파일을 브랜치에 푸시한 후, main과 병합하고 main을 풀(pull)하는 과정에서 오류가 발생함
+<br/>
+---
+<br/>
+### Issue 4. 로컬 파일을 브랜치에 푸시한 후, main과 병합하고 main을 풀(pull)하는 과정에서 오류 발생
 
 ![cap2](https://github.com/user-attachments/assets/d27c8779-8090-437a-bfb9-c81c4fd1e628)
 
-해결4)
+#### Solution : 충돌 파일들을 수동으로 수정하여 강제로 병합함
 
-충돌 파일들을 수동으로 수정하여 강제로 병합함
 
 ```
 git add src/controller/Controller.java
