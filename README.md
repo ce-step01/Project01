@@ -76,6 +76,8 @@ dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정
 STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 콘솔 출력문을 삽입함
 
 ```
+# DBUtil.java
+
     static {
         try {
             // dbinfo.properties 파일 로드
@@ -89,7 +91,7 @@ STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 �
             System.out.println("jdbc.password: " + p.getProperty("jdbc.password"));
 
             // JDBC 드라이버 로드
-            Class.forName(p.getProperty("jdbc.driver"));
+            Class.forName(p.getProperty("jdbc.driverClassName"));
             System.out.println("JDBC 드라이버가 정상적으로 로드되었습니다.");
         } catch (ClassNotFoundException e) {
             System.out.println("JDBC 드라이버 로드 실패: " + e.getMessage());
@@ -99,6 +101,22 @@ STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 �
             e.printStackTrace();
         }
     }
+```
+
+해결3)
+
+Class.forName(p.getProperty("jdbc.driverClassName")); 대신 Class.forName(p.getProperty("jdbc.driver"));로 수정함
+
+```
+# dbinfo.properties
+
+jdbc.driverClassName=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://127.0.0.1:3306/fisa
+jdbc.username=user01
+jdbc.password=user01
+
+# 추가된 부분 
+jdbc.driver=com.mysql.cj.jdbc.Driver
 ```
   
 
