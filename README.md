@@ -120,7 +120,22 @@ jdbc.password=user01
 # 추가된 부분 
 jdbc.driver=com.mysql.cj.jdbc.Driver
 ```
-  
+
+ <br/><br/>
+문제4)
+
+로컬 파일을 브랜치에 푸시한 후, main과 병합하고 main을 풀(pull)하는 과정에서 오류가 발생함
+
+![cap2](https://github.com/user-attachments/assets/d27c8779-8090-437a-bfb9-c81c4fd1e628)
+
+해결4)
+
+충돌 파일들을 수동으로 해결하여 강제로 병합함
+
+```
+git add src/controller/Controller.java
+git add src/park/view/StartView.java
+```
 
 ## ✒ 회고
 ---
