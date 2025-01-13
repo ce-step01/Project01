@@ -39,7 +39,9 @@
 
 csv 파일 형식의 데이터베이스를 DBeaver의 테이블로 전환 시 
 
+```
 오류코드 : Can't init data transfer, Can't create or update target table
+```
 
 해결1.
 
