@@ -49,6 +49,7 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 error code: Can't init data transfer, Can't create or update target table
 ```
 #### Solution : CSV 파일 스키마의 불필요한 공백 제거로 DBeaver 테이블 변환 성공
+<br/>
 
 ---
 <br/><br/>
