@@ -10,7 +10,7 @@ public class Controller {
 	// 모든 공원 정보 검색
 	public static void getparkInfo() {
 		try {
-			EndView.ParkView(ParkDAO.getAllparkInfo());
+			EndView.allParkView(ParkDAO.getAllparkInfo());
 		} catch (SQLException s) {
 			s.printStackTrace();
 			EndView.showError("모든 공원 검색시 에러 발생");
@@ -20,7 +20,7 @@ public class Controller {
 	// 특정 공원 정보 검색
 	public static void getparkInfo(int num) {
 		try {
-			EndView.allView(ParkDAO.getparkInfo(num));
+			EndView.parkView(ParkDAO.getparkInfo(num));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			EndView.showError("공원 정보 검색 오류");
