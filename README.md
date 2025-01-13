@@ -73,7 +73,7 @@ dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정
 
 문제3)
 
-STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 로그 출력문을 삽입함
+STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 콘솔 출력문을 삽입함
 
 ```
     static {
@@ -81,11 +81,13 @@ STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 �
             // dbinfo.properties 파일 로드
             p.load(new FileInputStream("dbinfo.properties"));
             System.out.println("dbinfo.properties 파일 로드 완료");
+
             // 파일 내용을 출력하여 확인
             System.out.println("jdbc.driver: " + p.getProperty("jdbc.driver"));
             System.out.println("jdbc.url: " + p.getProperty("jdbc.url"));
             System.out.println("jdbc.username: " + p.getProperty("jdbc.username"));
             System.out.println("jdbc.password: " + p.getProperty("jdbc.password"));
+
             // JDBC 드라이버 로드
             Class.forName(p.getProperty("jdbc.driver"));
             System.out.println("JDBC 드라이버가 정상적으로 로드되었습니다.");
