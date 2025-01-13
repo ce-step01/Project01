@@ -40,7 +40,7 @@
 
 ## 🔫 Troubleshooting
 ---
-<span style="color: blue;">이 글자는 파란색입니다.</span> 문제1) 
+문제1) 
 
 CSV 형식의 데이터를 DBeaver에서 테이블로 변환하지 못함
 
