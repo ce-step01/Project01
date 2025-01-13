@@ -2,7 +2,6 @@
  
 
 
-
 ## 🤸‍♀️ 팀원 소개
 
 <table>
@@ -43,7 +42,7 @@
 ---
 문제1) 
 
-csv 파일 형식의 데이터베이스를 DBeaver의 테이블로 전환 시 
+CSV 형식의 데이터를 DBeaver에서 테이블로 변환하지 못함
 
 ```
 오류코드 : Can't init data transfer, Can't create or update target table
@@ -51,15 +50,13 @@ csv 파일 형식의 데이터베이스를 DBeaver의 테이블로 전환 시
 
 해결1)
 
-csv 파일 전처리 시 스키마에 띄어쓰기(space) 공간이 남아있었다. 이것을 지워주니 테이블 변환에 성공했다.
+CSV 파일 전처리 시, 스키마에 불필요한 공백이 남아 있었음. 이를 제거하니 테이블 변환이 성공적으로 이뤄짐
 
 <br/><br/>
+
 문제2)
 
-데이터베이스 연결 중 발생한 IO 문제
-
-Oracle JDBC 드라이버를 사용하려고 시도하면서 Connection reset 예외가 발생
-
+데이터베이스 연결 중 Connection reset 예외가 발생함
 
 ```
 java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 ms., Authentication lapse 0 ms.
@@ -68,7 +65,11 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
     at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:39)
 ``` 
 
- 
+해결2)
+
+dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정했기에, 이를 수정함 
+
+ <br/><br/>
   
 
 ## ✒ 회고
