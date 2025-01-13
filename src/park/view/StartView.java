@@ -7,7 +7,7 @@ import controller.Controller;
 public class StartView {
 
 	public static void main(String[] args) {
-		
+    
 		Scanner scanner = new Scanner(System.in);
 		String menuInput = "";
 		
@@ -59,8 +59,9 @@ public class StartView {
 				break;
 				
 			case "4":
-				System.out.println("-------------------------------------");
-				System.out.println("  공지사항 글쓰기 입니다.");
+				System.out.println("*** 공원 위치로 주요식물 수정 ***");
+        Controller.updatePark("개나리","중구");
+        Controller.getparkInfo(1);
 				break;
 			
 			case "5":
