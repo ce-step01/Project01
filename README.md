@@ -42,6 +42,7 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 <br/>
 <br/>
 
+
 ## 🔍Main Features
 
 **1. 전체 공원 정보 검색**  
@@ -177,8 +178,8 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
 ```
 
  #### Solution : dbinfo.properties 파일 내 Oracle 드라이버 삭제 후 MySQL 드라이버로 수정
-<br/>
-![cap1](https://github.com/user-attachments/assets/14f82218-412e-4c20-9e12-f1be0779d8f2)
+
+<img width="365" alt="cap1" src="https://github.com/user-attachments/assets/c9d1ac36-d4f8-47a1-bd80-d1d1e41942cb" />
 
 <br/>
 
@@ -250,29 +251,44 @@ jdbc.driver=com.mysql.cj.jdbc.Driver
 
 #### Solution : 충돌 파일들을 수동으로 수정하여 강제로 병합함
 
-
 ```
 git add src/controller/Controller.java
 git add src/park/view/StartView.java
 ```
 
- <br/><br/>
- 문제5)
+<br/>
 
-MySQL과의 연결 문제로 Communication link failure 오류가 발생함
+ ---
+
+<br/>
+
+### Issue 5. MySQL과의 연결 문제로 Communication link failure 오류 발생
 
 ![cap3](https://github.com/user-attachments/assets/aacb6750-13a2-412b-8d85-b1a71699271f)
 
-해결5)
+#### Solution : Oracle VirtualBox 서버 실행 및 MobaXterm 로그인을 통해 mysql에 접속함
 
-Oracle VirtualBox의 서버 실행 및 MobaXterm 로그인해 mysql에 접속함
 
 ![cap4](https://github.com/user-attachments/assets/029b1b3e-051d-4423-bb6c-9d49ff3356fa)
+
+<br/>
+
 
 
 ## ✒Retrospective
 
+* 박지혜 : 내용을 완전히 이해했다고 생각하기 전에 프로젝트를 시작한 거라서 처음에는 막막했지만, 코드를 하나하나 작성해 나가고 수업 시간에 배운 내용들을 되짚어보면서 프로그램을 만들어 나가다 보니 자연스럽게 몰랐던 내용이 이해되었다. 프로젝트를 하면서 생각처럼 코드가 돌아가지 않아 속상하기도 하고, 계속 예상치 못했던 오류가 발생하여 마음이 급해지기도 했지만, 차근차근 트러블 슈팅을 해가면서 새로운 내용을 많이 배운 것 같다. 나중에는 완성도가 높아져 가면서 새로운 기능을 추가하고 싶다는 생각이 들기도 했다. 조금 아쉬웠던 점은 자바 문법에 대한 이해와 공부가 부족했다는 점이었다. 다음 프로젝트를 할 때는 자바 문법에 대해 더 많이 공부하여 추가 기능을 만들어 깔끔하고 완성도 높은 프로그램을 완성 시키고 싶다.
 
+
+* 박진현 : 난생처음 코드를 작성해 봤다. 생성자가 무엇인지 몰라 눈물을 흘렸던 이 주 전을 생각하면 이제 코드의 흐름을 이해할 수 있고, JDBC의 기능을 이해하기 시작했다는 점에서 의미가 있는 프로젝트였다. 하지만 여전히 Java 문법이 어색하기 때문에 좀 더 깊이 공부하려고 한다. 또한 GitHub 내 READ ME를 작성하며 실무자가 글을 읽었을 때 채용하고 싶다는 생각이 드는 글을 써야겠다고 생각하며, 다음에 계속해서 수정해야 할 것 같다.
+
+
+* 서소원 :
+
+
+* 석혜진 : 데이터베이스와 애플리케이션을 설치하고 연결하는 작업을 통해, 서버와의 네트워크 통신 및 데이터 전송과 관련된 기술적인 부분을 학습할 수 있었다. 주제 선정부터 최종 기록까지 팀원들과 역할을 나누어 프로젝트를 진행하면서, Java와 Git Bash 활용에 있어 부족한 부분을 배우고 보완할 수 있었다. 팀 프로젝트의 전반적인 흐름을 통찰할 수 있는 역량을 더 키워야겠다는 다짐이 들었다.
+
+<br/>
 
 ## 📑Reference
 
