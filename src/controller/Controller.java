@@ -40,5 +40,16 @@ public class Controller {
 		}
 		return result;
 	}
+	
+	public static boolean updatePark(String location, String principalSpecies) {
+		boolean result = false;
+		try {
+			result = ParkDAO.updateParkinfo(location, principalSpecies);
+		} catch (SQLException s) {
+			s.printStackTrace();
+			EndView.showError("공원 위치로 공원 특정 식물 변경");
+		}
+		return result;
+	}
 
 }
