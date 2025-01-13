@@ -11,7 +11,7 @@
 
 ## 📢 프로젝트 소개
 JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색할 수 있는 데이터베이스 시스템을 구현했습니다.  
-사용자들이 손쉽게 원하는 공원 정보를 찾을 수 있도록 주요 식물별, 지하철 노선별, 지역별 등 다양한 검색 기능을 제공합니다.
+사용자들이 손쉽게 원하는 공원 정보를 찾을 수 있도록 특정 키워드를 활용한 공원 이름 검색 기능을 제공합니다.
 
 ## 🗂 프로젝트 구조
 
@@ -41,26 +41,18 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 
 ## 🔍 주요 기능
 
-## 🔫 Troubleshooting
+## 🔫 트러블슈팅
 
-<br/>
-문제1)<br/> 
-
-CSV 형식의 데이터를 DBeaver에서 테이블로 변환하지 못함
+### Issue 1. CSV 형식 데이터의 DBeaver 테이블 변환 실패
 
 ```
 error code: Can't init data transfer, Can't create or update target table
 ```
+#### Solution : CSV 파일 스키마의 불필요한 공백 제거로 DBeaver 테이블 변환 성공**
 
-해결1)
+---
 
-CSV 파일 전처리 시, 스키마에 불필요한 공백이 남아 있었음. 이를 제거하니 테이블 변환이 성공적으로 이뤄짐
-
-<br/><br/>
-
-문제2)
-
-데이터베이스 연결 중 Connection reset 예외가 발생함
+### Issue 2. 데이터베이스 연결 중 Connection reset 예외 발생
 
 ```
 java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 ms., Authentication lapse 0 ms.
@@ -68,16 +60,13 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
     at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:688)
     at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:39)
 ``` 
-
-해결2)
-
 ![cap1](https://github.com/user-attachments/assets/14f82218-412e-4c20-9e12-f1be0779d8f2)
 
-dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정했기에, 이를 수정함 
+#### Solution : dbinfo.properties 파일 내 Oracle 드라이버 삭제 후 MySQL 드라이버로 수정
 
- <br/><br/>
+---
 
-문제3)
+### Issue 3. 데이터베이스 연결 중 Connection reset 예외 발생
 
 STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 콘솔 출력문을 삽입함
 
