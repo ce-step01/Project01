@@ -44,8 +44,7 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 ## 🔫 Troubleshooting
 
 <br/>
-문제1) 
-
+문제1)<br/> 
 
 CSV 형식의 데이터를 DBeaver에서 테이블로 변환하지 못함
 
