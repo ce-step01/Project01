@@ -6,10 +6,10 @@
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href=""><img src="width="100px;" alt=""/><br /><sub><b> : </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> : </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> : </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> : </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="width="100px;" alt=""/><br /><sub><b> 박지혜<https://github.com/parkjhhh> </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> 박진현<https://github.com/jinhyunpark929> </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> 서소원<https://github.com/PleaseErwin> </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> 석혜진<https://github.com/HyeJinSeok> </b></sub></a><br /></td>
   </tbody>
 </table>
 
