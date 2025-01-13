@@ -67,7 +67,7 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
 
 해결2)
 
-![](https://github.com/yourusername/yourrepo/assets/logo.png)
+<img src=https://github.com/yourusername/yourrepo/assets/logo.png></img>
 
 dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정했기에, 이를 수정함 
 
