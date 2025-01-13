@@ -36,19 +36,22 @@ public class Controller {
 			result = ParkDAO.addParkInfo(num, parkName, openingDate, principalSpecies, directions, location, officeNumber, keyFacilities);
 		} catch (SQLException s) {
 			s.printStackTrace();
-			EndView.showError("모든 프로젝트 저장시 에러 발생");
+			EndView.showError("공원 정보 추가 오류");
 		}
 		return result;
 	}
 	
 
-	public static boolean updatePark(String location, String principalSpecies) {
+	public static boolean updatePark(String principalSpecies, String location) {
 		boolean result = false;
 		try {
-			result = ParkDAO.updateParkinfo(location, principalSpecies);
+			result = ParkDAO.updateParkinfo(principalSpecies, location);
 		} catch (SQLException s) {
 			s.printStackTrace();
-			EndView.showError("공원 위치로 공원 특정 식물 변경");
+			EndView.showError("공원 정보 수정 오류");
+		}
+		return result;
+	}
 
       
 	public static boolean deletePark(String parkName) {

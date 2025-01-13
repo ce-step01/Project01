@@ -11,7 +11,6 @@ import park.model.util.DBUtil;
 
 public class ParkDAO {
 
-	// 수정
 	// location으로 주요식물 수정하기
 	public static boolean updateParkinfo(String principalSpecies, String location) throws SQLException {
 		Connection con = null;
@@ -60,6 +59,7 @@ public class ParkDAO {
 		return false;
 	}
 
+	// 검색어로 공원 정보 검색
 	public static ArrayList<ParkDTO> getparkInfo(String keyword) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -87,6 +87,7 @@ public class ParkDAO {
 		return list;
 	}
 
+	// 모든 공원 정보 검색
 	public static ArrayList<ParkDTO> getAllparkInfo() throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;

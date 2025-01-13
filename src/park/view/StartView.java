@@ -59,9 +59,12 @@ public class StartView {
 				break;
 				
 			case "4":
-				System.out.println("*** 공원 위치로 주요식물 수정 ***");
-        Controller.updatePark("개나리","중구");
-        Controller.getparkInfo(1);
+				String updatePrincipalSpecies;
+				String updateLocation;
+				System.out.println("정보를 수정할 주요식물/지역 순서대로 입력 > ");
+				updatePrincipalSpecies = scanner.nextLine();
+				updateLocation = scanner.nextLine();
+				Controller.updatePark(updatePrincipalSpecies, updateLocation);
 				break;
 			
 			case "5":
