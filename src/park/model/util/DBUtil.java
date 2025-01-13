@@ -13,8 +13,8 @@ public class DBUtil {
 
 	static {
 		try {
-			p.load(new FileInputStream("db.properties"));
-			Class.forName(p.getProperty("jdbc.driver"));
+			p.load(new FileInputStream("dbinfo.properties"));
+			Class.forName(p.getProperty("jdbc.driverClassName"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -18,7 +18,7 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("update seoul_main_park set principalSpecies=? where location=?");
+			pstmt = con.prepareStatement("update seoul_main_park set principal_species=? where location=?");
 			pstmt.setString(1, principalSpecies);
 			pstmt.setString(2, location);
 
@@ -67,13 +67,13 @@ public class ParkDAO {
 		ParkDTO park = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("select * from parkInfo num=?");// PreparedStatement 객체를 생성하여 SQL 쿼리를 준비하는 역할
+			pstmt = con.prepareStatement("select * from seoul_main_park where num=?");// PreparedStatement 객체를 생성하여 SQL 쿼리를 준비하는 역할
 			pstmt.setInt(1, num);
 			rset = pstmt.executeQuery();
 			if (rset.next()) {
-				park = ParkDTO.builder().parkName(rset.getString(1)).openingDate(rset.getString(2))
-						.principalSpecies(rset.getString(3)).directions(rset.getString(4)).location(rset.getString(5))
-						.officeNumber(rset.getString(6)).keyFacilities(rset.getString(7)).build();
+				park = ParkDTO.builder().num(rset.getInt(1)).parkName(rset.getString(2)).openingDate(rset.getString(3))
+						.principalSpecies(rset.getString(4)).directions(rset.getString(5)).location(rset.getString(6))
+						.officeNumber(rset.getString(7)).keyFacilities(rset.getString(8)).build();
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
@@ -86,16 +86,22 @@ public class ParkDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
+		ParkDTO park = null;
 		ArrayList<ParkDTO> list = null;
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement("select * from seoul_main_park");
 			rset = pstmt.executeQuery();
-
+			
 			list = new ArrayList<ParkDTO>();
-			list.add(ParkDTO.builder().parkName(rset.getString(1)).openingDate(rset.getString(2))
-					.principalSpecies(rset.getString(3)).directions(rset.getString(4)).location(rset.getString(5))
-					.officeNumber(rset.getString(6)).keyFacilities(rset.getString(7)).build());
+			
+			while (rset.next()) {
+				park = ParkDTO.builder().num(rset.getInt(1)).parkName(rset.getString(2)).openingDate(rset.getString(3))
+						.principalSpecies(rset.getString(4)).directions(rset.getString(5)).location(rset.getString(6))
+						.officeNumber(rset.getString(7)).keyFacilities(rset.getString(8)).build();
+				list.add(park);
+				System.out.println(park);
+			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
 		}
