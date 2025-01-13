@@ -45,7 +45,7 @@ public class StartView {
 				String addLocation;
 				String addOfficeNumber;
 				String addKeyFacilities;
-				System.out.print("추가할 공원 정보를 연번/공원명/개원일/주요식물/오시는길/지역/전화번호/주요시설 순서대로 입력 > ");
+				System.out.print("추가할 공원 정보를 연번/공원명/개원일/주요식물/오시는길/지역/전화번호/주요시설 순서대로 입력 (엔터로 구분) > ");
 				
 				addNum = Integer.parseInt(scanner.nextLine());
 				addParkName = scanner.nextLine();
@@ -55,13 +55,13 @@ public class StartView {
 				addLocation = scanner.nextLine();
 				addOfficeNumber = scanner.nextLine();
 				addKeyFacilities = scanner.nextLine();
-				Controller.addPark(addNum, addParkName, addOpeningDate, addPrincipalSpecies, addDirections, addLocation, addOfficeNumber, addKeyFacilities);
+				Controller.addPark(addNum, addParkName, addOpeningDate, addPrincipalSpecies, addDirections, addLocation, addOfficeNumber, addKeyFacilities); 
 				break;
 				
 			case "4":
 				String updatePrincipalSpecies;
 				String updateLocation;
-				System.out.println("정보를 수정할 주요식물/지역 순서대로 입력 > ");
+				System.out.println("정보를 수정할 주요식물/지역 순서대로 입력 (엔터로 구분) > ");
 				updatePrincipalSpecies = scanner.nextLine();
 				updateLocation = scanner.nextLine();
 				Controller.updatePark(updatePrincipalSpecies, updateLocation);
@@ -75,9 +75,9 @@ public class StartView {
 				break;
 			
 			case "6":
-			scanner.close();// 사용한 입력객체 닫기
-			System.out.println("프로그램 종료");
-			break whileLoop;
+				scanner.close();// 사용한 입력객체 닫기
+				System.out.println("프로그램 종료");
+				break whileLoop;
 		
 			default:
 				System.out.println("잘못된 값을 입력하셨습니다. 다시 입력하세요.");

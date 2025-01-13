@@ -19,7 +19,7 @@ public class EndView {
 				System.out.println("검색 정보 " + (count++) + " - " + p);
 			}
 		} else {
-			System.out.println("검색 정보 0");
+			System.out.println("검색 결과 없음");
 		}
 	}
 
