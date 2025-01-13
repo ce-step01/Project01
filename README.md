@@ -38,20 +38,34 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 
 ## ⚙ 아키텍처
 
-
+---
 ## 🔍 주요 기능
 
-**1. 전체 공원 정보 검색**
+**1. 전체 공원 정보 검색**  
+![Parkpal1](https://github.com/user-attachments/assets/1993c690-0dab-4537-b075-ab4cff87c833)
 
-**2. 특정 키워드가 포함된 공원 검색**
+**2. 특정 키워드가 포함된 공원 검색**  
+![Parkpal2](https://github.com/user-attachments/assets/ab1bce79-395a-452c-86d1-6ba95891eaf1)
 
-**3. 리스트 내 신규 공원 추가**
+**3. 리스트 내 신규 공원 추가**  
+![Parkpal3_1](https://github.com/user-attachments/assets/917d2889-ab63-412a-b101-99a1c6b614da)
+
+**정상적으로 추가 완료**  
+![Parkpal3_2](https://github.com/user-attachments/assets/a8812e8b-e662-4668-a734-75cbf8338860)
 
 **4. 특정 지역의 주요 식물 분포 변경**
+![Parkpal4](https://github.com/user-attachments/assets/7c0a1482-d8b4-40a3-b063-68db760405a7)
 
 **5. 공원명 내 특정 키워드를 포함한 공원 정보 삭제**
+![Parkpal5_1](https://github.com/user-attachments/assets/f22f0b42-dfb3-44a7-a24d-f13af3af6e26)
 
-**6. 프로그램 종료**
+**정상적으로 삭제 완료**  
+![Parkpal5_2](https://github.com/user-attachments/assets/bdd2bc4e-33ca-4158-a9a5-440092d1c68c)
+
+**6. 프로그램 종료**  
+![Parkpal6](https://github.com/user-attachments/assets/b323356b-5723-4c46-a8e0-96383c4f5402)
+
+---
 
 ## 🔫 트러블슈팅
 
