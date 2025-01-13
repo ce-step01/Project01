@@ -180,6 +180,7 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
 <br/>
 ![cap1](https://github.com/user-attachments/assets/14f82218-412e-4c20-9e12-f1be0779d8f2)
 
+
 <br/>
 
 ---
