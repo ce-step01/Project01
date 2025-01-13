@@ -45,7 +45,7 @@
 CSV 형식의 데이터를 DBeaver에서 테이블로 변환하지 못함
 
 ```
-오류코드 : Can't init data transfer, Can't create or update target table
+error code: Can't init data transfer, Can't create or update target table
 ```
 
 해결1)
@@ -70,6 +70,34 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
 dbinfo.properties 파일에서 MySQL 대신 Oracle 드라이버를 잘못 설정했기에, 이를 수정함 
 
  <br/><br/>
+
+문제3)
+
+STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 로그 출력문을 삽입함
+
+```
+    static {
+        try {
+            // dbinfo.properties 파일 로드
+            p.load(new FileInputStream("dbinfo.properties"));
+            System.out.println("dbinfo.properties 파일 로드 완료");
+            // 파일 내용을 출력하여 확인
+            System.out.println("jdbc.driver: " + p.getProperty("jdbc.driver"));
+            System.out.println("jdbc.url: " + p.getProperty("jdbc.url"));
+            System.out.println("jdbc.username: " + p.getProperty("jdbc.username"));
+            System.out.println("jdbc.password: " + p.getProperty("jdbc.password"));
+            // JDBC 드라이버 로드
+            Class.forName(p.getProperty("jdbc.driver"));
+            System.out.println("JDBC 드라이버가 정상적으로 로드되었습니다.");
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC 드라이버 로드 실패: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("DB 설정 파일 로드 중 오류 발생: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+```
   
 
 ## ✒ 회고
