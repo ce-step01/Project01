@@ -2,15 +2,10 @@
 
 ## 🤸‍♀️ 팀원 소개
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center"><a href=""><img src="width="100px;" alt=""/><br /><sub><b> 박지혜<https://github.com/parkjhhh> </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> 박진현<https://github.com/jinhyunpark929> </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> 서소원<https://github.com/PleaseErwin> </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b> 석혜진<https://github.com/HyeJinSeok> </b></sub></a><br /></td>
-  </tbody>
-</table>
+| ![박지혜](https://avatars.githubusercontent.com/u/153366521?v=4) | ![박진현](https://avatars.githubusercontent.com/u/193213283?s=400&u=a2ff434fa5c27a5567884503751aafc69e9167fe&v=4) | ![서소원](https://avatars.githubusercontent.com/u/79669001?v=4)| ![석혜진](https://avatars.githubusercontent.com/u/127267532?v=4) |
+|:--------------------:|:--------------------:|:--------------------:|:--------------------:|
+| [박지혜](https://github.com/parkjhhh) | [박진현](https://github.com/jinhyunpark929) | [서소원](https://github.com/PleaseErwin) | [석혜진](https://github.com/HyeJinSeok) |
+
 
 ## 📢 프로젝트 소개
 
