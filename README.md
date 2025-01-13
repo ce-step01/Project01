@@ -37,7 +37,7 @@
 ---
 1)  csv 파일 형식의 데이터베이스를 DBeaver의 테이블로 전환 시
    
-    <span style="color:red">오류코드 : Can't init data transfer</span> 
+   <p style="color:#DD6565">오류코드 : Can't init data transfer</p>
   
 
 ## ✒ 회고
