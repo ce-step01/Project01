@@ -45,6 +45,8 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 
 ## 🔍Main Features
 
+![제목을 입력해주세요_-001](https://github.com/user-attachments/assets/cd68420e-cf0e-454a-9899-31a7949f2d69)
+
 **1. 전체 공원 정보 검색**  
 ```c
 public static void getparkInfo() {
