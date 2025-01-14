@@ -16,6 +16,15 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 <br/>
 <br/>
 
+## 📑Reference
+
++ **서울시 주요 공원현황** <https://data.seoul.go.kr/dataList/OA-394/S/1/datasetView.do>
+  
+  + 2023년 11월 서울특별시시의회의 자료 기준, 총 **2959개**의 공원이 존재
+  + 이 중 서울시 직영 공원과 자치구별 주요 공원 총 130개를 선정한 **서울열린데이터 광장**의 **'서울시 주요 공원현황'** 을 선정
+  + 전처리 과정 중 주요 식물 관련 정보가 존재하지 않는 공원 데이터를 삭제하여 총 **88개의 공원 데이터 활용**	
+<br/>
+
 ## 🗂Project Structure
 
 ```
@@ -182,7 +191,7 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
     at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:39)
 ```
 
- #### Solution : dbinfo.properties 파일 내 Oracle 드라이버 삭제 후 MySQL 드라이버로 수정
+ #### Solution : db 이관으로 인한 db 설정 정보 변경
 
 <img width="365" alt="cap1" src="https://github.com/user-attachments/assets/c9d1ac36-d4f8-47a1-bd80-d1d1e41942cb" />
 
@@ -191,9 +200,7 @@ java.sql.SQLRecoverableException: IO 오류: Connection reset, connect lapse 1 m
 ---
 <br/>
 
-### Issue 3. 데이터베이스 연결 중 Connection reset 예외 발생
-
-STS와 DB 간의 연결 오류 발생 원인을 추적하기 위해 간단한 콘솔 출력문을 삽입함
+### Issue 3. 코드와 DB 간의 연결 오류 발생 원인을 위한 콘솔 출력문 입력
 
 ```
 # DBUtil.java
@@ -278,8 +285,6 @@ git add src/park/view/StartView.java
 
 <br/>
 
-
-
 ## ✒Retrospective
 
 * 박지혜 : 내용을 완전히 이해했다고 생각하기 전에 프로젝트를 시작한 거라서 처음에는 막막했지만, 코드를 하나하나 작성해 나가고 수업 시간에 배운 내용들을 되짚어보면서 프로그램을 만들어 나가다 보니 자연스럽게 몰랐던 내용이 이해되었다. 프로젝트를 하면서 생각처럼 코드가 돌아가지 않아 속상하기도 하고, 계속 예상치 못했던 오류가 발생하여 마음이 급해지기도 했지만, 차근차근 트러블 슈팅을 해가면서 새로운 내용을 많이 배운 것 같다. 나중에는 완성도가 높아져 가면서 새로운 기능을 추가하고 싶다는 생각이 들기도 했다. 조금 아쉬웠던 점은 자바 문법에 대한 이해와 공부가 부족했다는 점이었다. 다음 프로젝트를 할 때는 자바 문법에 대해 더 많이 공부하여 추가 기능을 만들어 깔끔하고 완성도 높은 프로그램을 완성 시키고 싶다.
@@ -292,10 +297,11 @@ git add src/park/view/StartView.java
 
 
 * 석혜진 : 데이터베이스와 애플리케이션을 설치하고 연결하는 작업을 통해, 서버와의 네트워크 통신 및 데이터 전송과 관련된 기술적인 부분을 학습할 수 있었다. 주제 선정부터 최종 기록까지 팀원들과 역할을 나누어 프로젝트를 진행하면서, Java와 Git Bash 활용에 있어 부족한 부분을 배우고 보완할 수 있었다. 팀 프로젝트의 전반적인 흐름을 통찰할 수 있는 역량을 더 키워야겠다는 다짐이 들었다.
-
 <br/>
 
-## 📑Reference
-
-+ [서울시 주요 공원현황] <https://data.seoul.go.kr/dataList/OA-394/S/1/datasetView.do>
-
+## 📌Git Commit Rules
+* feat	: 새로운 기능에 대한 커밋
+* fix	: 버그 수정에 대한 커밋
+* build : 빌드 관련 파일 수정에 대한 커밋
+* docs	: 문서 수정에 대한 커밋
+* perf	: 성능 개선에 대한 커밋
