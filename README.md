@@ -45,7 +45,8 @@ JDBC와 MySQL을 활용하여 서울시 공원 정보를 효율적으로 검색�
 
 ## 🔍Main Features
 
-![제목을 입력해주세요_-001](https://github.com/user-attachments/assets/cd68420e-cf0e-454a-9899-31a7949f2d69)
+![Parkpal_MainFeature](https://github.com/user-attachments/assets/b2346bd8-6a52-4ae4-ac6d-fd9592968589)
+
 <br/>
 ---
 
