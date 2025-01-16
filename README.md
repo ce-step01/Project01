@@ -70,7 +70,7 @@
 
 ## 📂 프로젝트 구조
 
-1. 가격 범위에 따른 거래 필터링
+6. 가격 범위에 따른 거래 필터링
    가격이 소수점 두 자리로 끝나는 거래만 선택.
 
 ```sql
@@ -105,6 +105,8 @@ WHERE price REGEXP '^[0-9]+\\.[0-9]{2}$';
 
 **$** : 문자열의 끝을 의미한다.
 
+![image_1](https://github.com/user-attachments/assets/95bcafb3-07b9-4ec3-8519-10b0a8d8a224)
+![image_2](https://github.com/user-attachments/assets/78530c4e-813e-42b0-85df-35708ddbfe80)
 
 
 
@@ -136,3 +138,66 @@ WHERE price REGEXP '^[0-9]+\\.[0-9]{2}$';
 </details>
 
 
+7. 오전/오후 거래 구분
+   오전(09:00 ~ 12:00) 시간대에 거래된 데이터만 필터링.
+
+```sql
+SELECT trade_id, trade_date, stock_symbol
+FROM stock_trades
+WHERE HOUR(trade_date) BETWEEN 9 AND 11
+  OR (HOUR(trade_date) = 12 AND MINUTE(trade_date) = 0 AND SECOND(trade_date) = 0);
+```
+
+<details>
+  <summary>풀이</summary>
+
+```sql
+SELECT trade_id, trade_date, stock_symbol
+FROM stock_trades
+WHERE trade_date REGEXP ' (09|1[0-1]):[0-5][0-9]:[0-5][0-9]$'
+  OR trade_date REGEXP ' 12:00:00$';
+```
+
+  
+ **REGEXP** : 정규표현식을 활용한 문자열 검색을 필터링 가능하게 하는 조건문
+
+   
+
+**[0-N]**: 0부터 N까지의 문자열을 반환한다.
+
+**$** : 문자열의 끝을 의미한다. 
+
+오전 시간대는 00:00:00 부터 12:00:00 까지 이다. 따라서 hh부분은(09|1[0-1])를 이용해 9시부터 11시까지를, mm 부분은 [0-5][0-9]를 이용해 00분부터 59까지를 ss부분은 00초부터 59초까지를 출력하고, 여기서 추가로 12:00:00까지 필터링하도록 한다.
+
+![image](https://github.com/user-attachments/assets/720170bd-64e0-45ee-a5d3-bfdbd62637c9)
+![image2](https://github.com/user-attachments/assets/7ba67f37-7d48-4a2f-827f-f57cfe0992b0)
+
+
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+  <summary>클릭하여 더보기</summary>
+  
+  여기에 토글할 내용이 들어갑니다.
+  
+  예시:
+  - 항목 1
+  - 항목 2
+  - 항목 3
+  
+</details>
